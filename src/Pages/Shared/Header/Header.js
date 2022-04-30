@@ -1,33 +1,57 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import './Header.css';
+import auth from "../../../Firebase/Firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
+
+import "./Header.css";
+import CustomLink from "../CustomActiveLink/CustomLink";
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+
+  const handleLogout = () => {
+    signOut(auth);
+  };
   return (
-    <div>
+    <div className="navbar">
       <Navbar collapseOnSelect expand="lg">
-        <Container className="navbar">
-          <Navbar.Brand as={Link} to="/">Nath Toys</Navbar.Brand>
+        <Container>
+          <Navbar.Brand
+            className="text-uppercase fs-3 text-primary"
+            as={Link} to="/"
+          >
+            Nath ToYs
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto link">
-              <Nav.Link as={Link} to="/home">Home</Nav.Link>
-              <Nav.Link as={Link} to="/products">Products</Nav.Link>
+            <Nav className="me-auto">
+              <Nav className="nav-link">
+                <CustomLink as={Link} to="/">
+                  Home
+                </CustomLink>
+                <CustomLink as={Link} to="/Products">
+                  Products
+                </CustomLink>
+                <CustomLink as={Link} to="/Blogs">
+                  Blogs
+                </CustomLink>
+                <CustomLink as={Link} to="/About">
+                  About
+                </CustomLink>
+              </Nav>
             </Nav>
-            <Nav>
-              <NavDropdown title="Manage Items" id="collasible-nav-dropdown">
-                <NavDropdown.Item as={Link} to="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="#action/3.3">
-                  Something
-                </NavDropdown.Item>                
-              </NavDropdown>
-              <Nav.Link eventKey={2} as={Link} to="/login">
-                Login
-              </Nav.Link>
+            <Nav className="nav-link">
+              {!user ? (
+                <CustomLink as={Link} to="/Login">
+                  Login
+                </CustomLink>
+              ) : (
+                <CustomLink onClick={handleLogout} as={Link} to="/Login">
+                  Log out
+                </CustomLink>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

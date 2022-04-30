@@ -1,7 +1,32 @@
 .navbar {
-    background-color: rgb(7, 3, 49);
-   
+    position: absolute;
+    top: 0;
+    z-index: 11;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    height: 70px;
+    font-size: 20px;
+    background-image: linear-gradient(to right, #270b4f 0%, #430949 100%);
+    
+    
 }
-Nav .link {
-    color: rgb(226, 154, 73);
+
+.nav-link a{
+    color: rgb(241, 220, 84);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;    
+    padding: 10px 14px;
+    margin: 10px 14px;    
+    transition: 0.5s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+} 
+
+.nav-link a:hover {
+    color: rgb(255, 188, 4);
+    
 }
