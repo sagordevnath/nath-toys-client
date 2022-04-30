@@ -1,14 +1,33 @@
 .social-icons {
     margin: 30px auto;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
 }
 
 .social-icons img {
-    width: 30px;
+    width: 20px;
     margin: 0 12px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     cursor: pointer;
     border-radius: 50%;
     
 
+}
+
+.social-btn {
+    width: 50%;
+	background: transparent;
+    background-color: rgb(217, 120, 156);
+	border: 1px solid #fff;	
+	height: 24px;
+	font-size: 12px;
+	border-radius: 20px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+    margin-right: 10px;
 }
