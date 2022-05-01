@@ -31,8 +31,8 @@ const Header = () => {
                 <CustomLink as={Link} to="/">
                   Home
                 </CustomLink>
-                <CustomLink as={Link} to="/Products">
-                  Products
+                <CustomLink as={Link} to="/inventories">
+                  Inventories
                 </CustomLink>
                 <CustomLink as={Link} to="/Blogs">
                   Blogs
