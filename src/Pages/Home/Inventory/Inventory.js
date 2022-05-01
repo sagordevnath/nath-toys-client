@@ -1,9 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Inventory.css'
 
 const Inventory = ({inventory}) => {
-    const {img, name, description, price, quantity, supplier} = inventory;
+    const {_id, img, name, description, price, quantity, supplier} = inventory;
+    
+
+    const navigate = useNavigate();
+
+    const navigateToServiceDetail = id =>{
+        navigate(`/inventory/${id}`);
+    }
     return (
         <div className='inventory'>
             <div className="card">
@@ -18,7 +25,7 @@ const Inventory = ({inventory}) => {
                 <li className="list-group-item">Supplier: {supplier}</li>
             </ul>
             <div className="card-body">
-                <button><Link to="#" className="card-link">UPDATE</Link></button>                
+                <button onClick={()=>navigateToServiceDetail(_id)}><Link to="#" className="card-link">UPDATE</Link></button>                
             </div>
             </div>
         </div>
