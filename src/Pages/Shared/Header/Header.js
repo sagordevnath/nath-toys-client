@@ -43,6 +43,16 @@ const Header = () => {
               </Nav>
             </Nav>
             <Nav className="nav-link">
+            {user ? (
+                <CustomLink as={Link} to="/addInventory">
+                  Add Inventory
+                </CustomLink>
+            ) : ('')}
+            {user ? (
+                <CustomLink as={Link} to="/myInventory">
+                  My Inventory
+                </CustomLink>
+            ) : ('')}
               {!user ? (
                 <CustomLink as={Link} to="/Login">
                   Login
