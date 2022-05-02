@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 
 const ManageInventory = ({inventory}) => {
     const {_id, img, name, description, price, quantity, supplier} = inventory;
 
+    const [items, setItems] = useState([]);
+
     const navigate = useNavigate();
 
-    const navigateToServiceDetail = id =>{
-        navigate(`/inventory/${id}`);
+
+    // handle delete inventory
+    const handleDelete = (id) => {
+        const proceed = window.confirm(`Are you sure you want to delete ${name}?`);
+        if (proceed) {
+        const url = `http://localhost:5000/inventory/${_id}`;
+        fetch(url, {
+            method: 'DELETE'
+        })
+         .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount > 0){
+                    const remaining = items.filter(item => item._id !== id);
+                    setItems(remaining);
+                    
+
+                }
+                
+            })
+        }
     }
     
 
@@ -26,7 +47,7 @@ const ManageInventory = ({inventory}) => {
                 <li className="list-group-item">Supplier: {supplier}</li>
             </ul>
             <div className="card-body">
-                <button onClick={()=>navigateToServiceDetail(_id)}><Link to="" className="card-link">DELETE</Link></button>                
+                <button onClick={()=>handleDelete(inventory._id)}><Link to="" className="card-link">DELETE</Link></button>                
             </div>
             </div>            
         </div>
