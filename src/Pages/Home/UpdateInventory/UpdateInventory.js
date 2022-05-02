@@ -19,20 +19,54 @@ const UpdateInventory = () => {
     },[quantity]);
 
     // quantity decrease by one when clicked
-    
-     
- 
+    const decreaseQuantity = () => {
+        const url = `http://localhost:5000/inventory/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                quantity: quantity - 1
+             }) 
+        })
+        .then(res => res.json()) 
+        .then(data => setInventory(data))
+    }
 
-      
-  
+    // quantity increase by input field value one when clicked
+    const increaseQuantity = (event) => {
+        
+        const newQuantity = event.target.quantity.value;
+        console.log(newQuantity);
+        const updatedQuantity = parseInt(newQuantity) + parseInt(quantity);
+        const url = `http://localhost:5000/inventory/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                quantity: updatedQuantity
+                })
+        })
+        .then(res => res.json())
+        .then(data => {console.log(data)
+            alert(`${data.name} quantity updated to ${updatedQuantity}`)
+        
+       
+       
+        })
+        
+    }
 
-
-   
+        
        
     
         
     return (
-        <div className='updateInventory'>
+        <div className='manageInventories'>
+            <div className='updateInventory'>
             <div className="card">
             <img width="30px" src={img} className="card-img-top" alt="..." />
             <div className="card-body">
@@ -45,9 +79,15 @@ const UpdateInventory = () => {
                 <li className="list-group-item">Supplier: {supplier}</li>
             </ul>            
             <div className="card-body">
-                <button><Link to="/" className="card-link">Delivered</Link></button>                
+                <button onClick={decreaseQuantity}><Link to="" className="card-link">Delivered</Link></button>                
             </div>
             </div>
+        </div>
+        <form  onSubmit={increaseQuantity} className='updateStock'>
+            <input type="text" name="quantity" placeholder="Quantity" id="" />
+            <br /> 
+            <input type="submit" value="Stock Quantity" />
+        </form>
         </div>
     );
 };

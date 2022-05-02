@@ -1,4 +1,18 @@
+.manageInventories {
+  display: flex;
+  
+}
 .updateInventory {
     width: 350px;    
     margin: 0 auto;
+}
+
+.updateStock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    margin: 0 auto;
+
+    
 }

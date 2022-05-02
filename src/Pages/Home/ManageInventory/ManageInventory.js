@@ -26,7 +26,7 @@ const ManageInventory = ({inventory}) => {
                 <li className="list-group-item">Supplier: {supplier}</li>
             </ul>
             <div className="card-body">
-                <button onClick={()=>navigateToServiceDetail(_id)}><Link to="" className="card-link">UPDATE</Link></button>                
+                <button onClick={()=>navigateToServiceDetail(_id)}><Link to="" className="card-link">DELETE</Link></button>                
             </div>
             </div>            
         </div>
