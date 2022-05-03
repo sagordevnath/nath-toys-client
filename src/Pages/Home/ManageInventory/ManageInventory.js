@@ -7,7 +7,7 @@ const ManageInventory = ({inventory}) => {
 
     const [items, setItems] = useState([]);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
     // handle delete inventory

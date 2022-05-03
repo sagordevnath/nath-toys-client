@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./SocialLogin.css";
 import google from "../../../Images/social/google.png";
 import github from "../../../Images/social/github.png";
@@ -7,7 +7,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/Firebase.init";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../Shared/Loading/Loading";
 
@@ -17,6 +17,7 @@ const SocialLogin = () => {
   const [signInWithGithub, githubUser, githubLoading, githubError] =
     useSignInWithGithub(auth);
   const navigate = useNavigate();
+  const location = useLocation();
 
   if (googleError || githubError) {
     toast("Something went wrong. Please try again!!");
@@ -24,10 +25,17 @@ const SocialLogin = () => {
   if (googleLoading || githubLoading) {
     return <Loading></Loading>;
   }
-  if (googleUser || githubUser) {
-    navigate("/");
+  
+  if (!googleUser || !githubUser) {
+    <Navigate to="/login" state={{from: location}} replace />;
+    // navigate("/") ;
+  }
+  if(googleUser || githubUser) {
+    navigate('/')
   }
 
+  
+  
   return (
     <div className="social-icons">
       <button onClick={() => signInWithGoogle()} className="social-btn">

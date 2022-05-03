@@ -1,29 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './addInventory.css';
+import React from "react";
+import { useForm } from "react-hook-form";
+import "./addInventory.css";
 
 const AddInventory = () => {
-    return (
-        <div>
-            <h4 className='text-center text-primary my-3'>Add a New Inventory</h4>
-            <div className='addInventory'>            
-            <input type="text" name="img" id="" placeholder="Image Url" required />            
-            <br />
-            <input type="text" name="name" id="" placeholder="Name" required />
-            <br />                
-            <input type="text" name="description" id="" placeholder="Description" required />
-            <br />                
-            <input type="text" name="price" id="" placeholder="Price" required />
-            <br />                
-            <input type="text" name="quantity" id="" placeholder="Quantity" required />
-            <br />               
-            <input type="text" name="supplier" id="" placeholder="Supplier" required />
-            <br />   
-            <button><Link to="" className="card-link">Add Inventory</Link></button>              
-            
-        </div>
-        </div>
-    );
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        // console.log(data);  
+
+      const url = 'http://localhost:5000/inventory';
+      fetch(url, {
+          method: 'POST',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(result => {
+          console.log(result)
+      })      
+
+    }
+
+  return (
+    <div className='w-50 mx-auto'>
+        <h3>Please add a new inventory</h3>
+        <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+      <input className='mb-2' placeholder='ImgUrl' {...register("img")} />
+      <input className='mb-2' placeholder='Name' {...register("name")} />
+      <textarea className='mb-2' placeholder='Description' {...register("description")} />
+      <input className='mb-2' placeholder='Price' type="number" {...register("price")} />
+      <input className='mb-2' placeholder='Quantity' type="number" {...register("quantity")} />
+      <input type="submit" value='Add Inventory' />
+    </form>
+    </div>
+  );
 };
 
 export default AddInventory;
