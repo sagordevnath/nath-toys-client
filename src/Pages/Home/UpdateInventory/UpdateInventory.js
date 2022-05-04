@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './UpdateInventory.css';
 
 
@@ -60,12 +60,18 @@ const UpdateInventory = () => {
         
     }
 
+    const navigate = useNavigate();
+    const handleManageInventories = () => {
+        navigate('/manageInventories');
+    }
+
         
        
     
         
     return (
-        <div className='manageInventories'>
+        <div>
+            <div className='manageInventories'>
             <div className='updateInventory'>
             <div className="card">
             <img width="30px" src={img} className="card-img-top" alt="..." />
@@ -87,7 +93,9 @@ const UpdateInventory = () => {
             <input type="text" name="quantity" placeholder="Quantity" id="" />
             <br /> 
             <input type="submit" value="Stock Quantity" />
-        </form>
+        </form>        
+        </div>
+        <button onClick={handleManageInventories}>Manage Inventories</button>
         </div>
     );
 };

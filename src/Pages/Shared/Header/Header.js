@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import auth from "../../../Firebase/Firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
-
+import logo from '../../../Images/logo/logo.png'
 import "./Header.css";
 import CustomLink from "../CustomActiveLink/CustomLink";
 
@@ -22,6 +22,7 @@ const Header = () => {
             className="text-uppercase fs-3 text-primary"
             as={Link} to="/"
           >
+            <img width='60px' src={logo} alt="" />  
             Nath ToYs
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

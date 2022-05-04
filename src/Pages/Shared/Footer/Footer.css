@@ -1,0 +1,54 @@
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 500px;
+    grid-gap: 1rem;
+    margin-top: 30px;
+    padding: 2rem;
+    padding-top: 5rem;    
+    background-image: url(//cdn.shopify.com/s/files/1/0199/7497/9684/files/footer.jpg?v=1580965899);
+
+    
+}
+.footer-container li {
+    list-style: none;    
+    font-size: 1rem;
+    font-weight: bold;      
+    letter-spacing: 2px;    
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.footer-container li:hover {
+    color: rgb(0, 210, 225);
+}
+
+.btn {
+    /* background-color: #0d0655; */
+    color: rgb(239, 205, 35);
+    border: none;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    
+
+}
+
+.btn:hover {
+    background-color: rgb(239, 205, 35);
+    color: #0d0655;
+}
+.social-icons{
+    display: block;    
+    margin-top: 1rem;
+}
+
+.social-icons svg {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 15px;
+}
