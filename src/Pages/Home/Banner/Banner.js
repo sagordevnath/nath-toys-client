@@ -8,38 +8,35 @@ const Banner = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://kdvr.com/wp-content/uploads/sites/11/2022/02/1040x585-2022-0117-best-teeturtle-toys-b484b4.jpg?w=1280https://kdvr.com/wp-content/uploads/sites/11/2022/02/1040x585-2022-0117-best-teeturtle-toys-b484b4.jpg?w=1280"
+            src="https://i.ibb.co/9t2d82d/carousel1.jpg"
             alt="Second slide"
           />
-
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Baby relationship with Toys</h3>
+            <p>It impacts cognitive development, social and emotional development, as well as language development.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://kdvr.com/wp-content/uploads/sites/11/2022/02/1040x585-2022-0117-best-teeturtle-toys-b484b4.jpg?w=1280https://kdvr.com/wp-content/uploads/sites/11/2022/02/1040x585-2022-0117-best-teeturtle-toys-b484b4.jpg?w=1280"
+            src="https://i.ibb.co/zXFGzFR/carousel2.jpg"
             alt="Second slide"
           />
-
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Benefits of Traditional Toys</h3>
+            <p>Creative Thinking, Physical Activity, Durability,An Ethical Choice</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://kdvr.com/wp-content/uploads/sites/11/2022/02/1040x585-2022-0117-best-teeturtle-toys-b484b4.jpg?w=1280"
+            src="https://i.ibb.co/17s6x6c/carousel3.jpg"
             alt="Third slide"
           />
-
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h3>Toys affect child development</h3>
             <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            make room for your child's constantly evolving perspective of the world.
             </p>
           </Carousel.Caption>
         </Carousel.Item>

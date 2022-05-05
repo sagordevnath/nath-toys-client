@@ -3,15 +3,14 @@ import "./ProductGalary.css";
 
 const ProductGalary = () => {
   return (
-    <div className="container">
-      <h1>Product Gallery</h1>
-
+    <div className="product-gallery container">
+      <h1 className='text-center text-primary'>Product Gallery</h1>
       <div className="row">
         <div className="column">
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                <img src="https://assets.codepen.io/652/the-lucky-neko-CM7a-XBD4AU-unsplash.jpg" />
+                <img src="https://i.ibb.co/WyTWBM2/gallery1.jpg" />
               </div>
               <div className="flip-card-back ollie">
                 <h1>Ollie</h1>
@@ -26,7 +25,7 @@ const ProductGalary = () => {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
-                  src="https://assets.codepen.io/652/karsten-winegeart-NE0XGVKTmcA-unsplash.jpg"
+                  src="https://i.ibb.co/wdxPFp8/gallery2.jpg"
                   alt="a brown French bulldog puppy laying down and looking up with a hopeful look in its eyes. "
                   title="Photo by Karsten Winegeart for Unsplash"
                 />
@@ -44,7 +43,7 @@ const ProductGalary = () => {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
-                  src="https://assets.codepen.io/652/kabo-NjWZ07sPEJE-unsplash.jpg"
+                  src="https://i.ibb.co/12xFftH/gallery3.jpg"
                   alt="A large long-haired orange cat with a white belly. "
                   title="Photo by Kabo for Unsplash"
                 />
@@ -62,7 +61,7 @@ const ProductGalary = () => {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
-                  src="https://assets.codepen.io/652/giacomo-lucarini-7M0SG3ZKdlE-unsplash.jpg"
+                  src="https://i.ibb.co/y4zXN8G/gallery4.jpg"
                   alt="A light brown, long-haired chihuahua sitting next to three rubber duckies. "
                   title="Photo by Giacomo Lucarini for Unsplash"
                 />
@@ -81,7 +80,7 @@ const ProductGalary = () => {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
-                  src="https://assets.codepen.io/652/sergey-semin-Y0WXj3xqJz0-unsplash.jpg"
+                  src="https://i.ibb.co/2MhW2Rn/gallery5.jpg"
                   alt="A tabby kitten with green eyes. "
                   title="Photo by Sergey Semin for Unsplash"
                 />
@@ -100,7 +99,7 @@ const ProductGalary = () => {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
-                  src="https://assets.codepen.io/652/jordan-bigelow-X5VoG4MA5aI-unsplash.jpg"
+                  src="https://i.ibb.co/BgR01xC/gallery6.jpg"
                   alt="A light brown puppy standing on a white and tan woven pet bed. "
                   title="Photo by Sergey Semin for Unsplash"
                 />
