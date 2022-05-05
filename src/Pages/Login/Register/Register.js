@@ -79,6 +79,7 @@ const Register = () => {
       const handleRegister = e => {
           e.preventDefault();          
           createUserWithEmailAndPassword(userInfo.email, userInfo.password);
+          toast('Please check your email for verification');
           
 
           if (loading) {

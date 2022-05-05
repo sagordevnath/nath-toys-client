@@ -25,7 +25,7 @@ const Header = () => {
             <img width='60px' src={logo} alt="" />  
             Nath ToYs
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle className='text-warning' aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav className="nav-link">

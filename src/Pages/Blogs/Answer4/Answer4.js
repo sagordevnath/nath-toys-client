@@ -9,7 +9,7 @@ const Answer4 = () => {
           What is the purpose of jwt and how does it work
         </Card.Header>
         <Card.Body className='card-body'>
-          <Card.Title>JWT or JSON Web Token</Card.Title>
+          <Card.Title className='text-primary'>JWT or JSON Web Token</Card.Title>
           <Card.Text>
             JWT, or JSON Web Token, is an open standard used to share security
             information between two parties — a client and a server. Each JWT

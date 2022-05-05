@@ -1,0 +1,13 @@
+@media screen and (max-width: 991px) {
+    h3 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 7px;
+        margin-bottom: 10px;
+    }
+   
+    
+}

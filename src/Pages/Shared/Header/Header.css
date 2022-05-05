@@ -30,3 +30,35 @@
     color: rgb(255, 188, 4);
     
 }
+
+.navbar-toggler-icon {
+    width: 2rem;
+    height: 2rem;    
+    vertical-align: middle;
+    transition: 0.5s;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:yellow;
+    position: relative;
+
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .navbar-toggler-icon {
+        color:aqua;
+        
+    }
+    .nav-link a {        
+        color: rgb(241, 220, 84);
+        text-decoration: none;
+        font-size: 14px;
+        text-align: center;
+        background: #1b055a;
+        display: block;
+        transition: 0.5s;
+    }
+
+    
+}

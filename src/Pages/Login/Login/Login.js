@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/Firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Loading from '../../Shared/Loading/Loading';
 import "./Login.css";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -22,7 +23,7 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, hookError] =
     useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending, error] =
+  const [sendPasswordResetEmail, sending] =
     useSendPasswordResetEmail(auth);
 
   const handleEmailInput = (e) => {
@@ -57,7 +58,13 @@ const Login = () => {
 
     signInWithEmailAndPassword(userInfo.email, userInfo.password);
     console.log(hookError?.message);
+
+    if (loading || sending) {
+      return <Loading></Loading>
+  }
   };
+
+  
 
   useEffect(() => {
     if (hookError) {
