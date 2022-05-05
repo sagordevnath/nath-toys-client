@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./SocialLogin.css";
 import google from "../../../Images/social/google.png";
 import github from "../../../Images/social/github.png";
@@ -7,33 +7,32 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/Firebase.init";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../Shared/Loading/Loading";
 
 const SocialLogin = () => {
-  const [signInWithGoogle, googleUser, googleLoading, googleError] =
-    useSignInWithGoogle(auth);
-  const [signInWithGithub, githubUser, githubLoading, githubError] =
-    useSignInWithGithub(auth);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
+    const navigate = useNavigate();
+    const location = useLocation();
 
-  if (googleError || githubError) {
-    toast("Something went wrong. Please try again!!");
-  }
-  if (googleLoading || githubLoading) {
-    return <Loading></Loading>;
-  }
-  
-  if (!googleUser || !githubUser) {
-    <Navigate to="/login" state={{from: location}} replace />;
-    // navigate("/") ;
-  }
-  if(googleUser || githubUser) {
-    navigate('/')
-  }
+    let from = location.state?.from?.pathname || "/";
+    
+    let errorElement;
 
+    if(googleLoading || githubLoading){
+        return <Loading></Loading>
+    }
+
+    if (googleError || githubError) {
+        errorElement = <p className='text-danger'>Error: {googleError?.message} {githubError?.message}</p>
+    }
+
+    if (googleUser || githubUser) {
+        navigate(from, { replace: true });
+        toast('Successfully Login');
+    }
   
   
   return (

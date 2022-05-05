@@ -1,0 +1,73 @@
+.subscriber-container {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    background-color: aliceblue;
+}
+.subscribe img {
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+.subscribe1 img {
+    width: 100%;
+    height: 300px;
+}
+.subscribe2 img {
+    width: 100%;
+    height: 300px;
+}
+
+.subscribe input {    
+    border: none;
+    border-radius: 5px;
+    background-color: #cbdcdf;
+    font-size: 20px;
+    padding-left: 10px;
+    outline: none;
+    border-bottom: 2px solid rgb(39, 22, 22);
+}
+.subscribe button {
+    border: none;
+    border-radius: 5px;
+    background-color: #cbdcdf;
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 10px;
+}
+.subscribe button:hover {
+    background-color: #150b66;
+    color: #cdbc00;
+}
+
+ 
+  
+  /* Social Icons */
+  .social-icons {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social-icon {  
+      background-color: rgb(166, 185, 203);  
+      color: rgb(20, 17, 99);  
+      padding: 10px;
+    margin: 0 0.5rem;
+    border-radius: 30%;
+    cursor: pointer;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    
+  
+  }   
+ 
+    .social-icon:hover {
+        transform: scale(1.1);
+    }
