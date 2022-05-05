@@ -15,7 +15,7 @@ const MyInventory = () => {
         const getMyInventory = async() => {
             const email = user?.email;
             
-            const url = `http://localhost:5000/myInventory`;
+            const url = `http://localhost:5000/myInventory?email={email}`;
             
             
 

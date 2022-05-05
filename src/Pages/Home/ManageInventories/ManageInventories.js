@@ -12,6 +12,7 @@ const ManageInventories = () => {
                     key={inventory._id}
                     inventory={inventory}
                 >
+                    <button>Delete</button>
                 </ManageInventory>)
             }
         </div>

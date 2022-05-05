@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from "../../../Firebase/Firebase.init";
 import "./addInventory.css";
+import { toast } from "react-toastify";
 
 const AddInventory = () => {
   const [user] = useAuthState(auth);
@@ -13,18 +14,18 @@ const AddInventory = () => {
 
       const url = `http://localhost:5000/inventory`;
       fetch(url, {
-          method: 'POST',
-          headers: {
-              'content-type': 'application/json'
-          },
-          body: JSON.stringify(data)
-      })
-      .then(res => res.json())
-      .then(result => {
-          console.log(result)
-      })      
-
-    }
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(res=> res.json())
+    .then(result =>{
+        console.log(result);
+        toast('Successfully Added')
+    } )
+};
 
   return (
     <div className='w-50 mx-auto'>
