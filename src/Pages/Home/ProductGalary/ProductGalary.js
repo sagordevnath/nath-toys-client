@@ -4,7 +4,7 @@ import "./ProductGalary.css";
 const ProductGalary = () => {
   return (
     <div className="product-gallery container">
-      <h1 className='text-center text-primary'>Product Gallery</h1>
+      <h1 className='text-center text-primary'>Kids Gallery</h1>
       <div className="row">
         <div className="column">
           <div className="flip-card">

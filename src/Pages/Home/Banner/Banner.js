@@ -12,8 +12,8 @@ const Banner = () => {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h3>Baby relationship with Toys</h3>
-            <p>It impacts cognitive development, social and emotional development, as well as language development.</p>
+            <h3 className='text-warning'>Baby relationship with Toys</h3>
+            <p className='text-info'>It impacts cognitive development, social and emotional development, as well as language development.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -23,8 +23,8 @@ const Banner = () => {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h3>Benefits of Traditional Toys</h3>
-            <p>Creative Thinking, Physical Activity, Durability,An Ethical Choice</p>
+            <h3 className='text-warning'>Benefits of Traditional Toys</h3>
+            <p className='text-info'>Creative Thinking, Physical Activity, Durability,An Ethical Choice</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -34,8 +34,8 @@ const Banner = () => {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Toys affect child development</h3>
-            <p>
+            <h3 className='text-warning'>Toys affect child development</h3>
+            <p className='text-info'>
             make room for your child's constantly evolving perspective of the world.
             </p>
           </Carousel.Caption>
