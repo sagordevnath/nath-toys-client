@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const ManageInventory = ({inventory}) => {
-    const {_id, img, name, description, price, quantity, supplier} = inventory;
+    const {_id, img, name, description, price, quantity, sell, supplier} = inventory;
 
     const [items, setItems] = useState([]);
 
@@ -40,6 +40,7 @@ const ManageInventory = ({inventory}) => {
             <ul className="list-group list-group-flush">
                 <li className="list-group-item">Price: {price}</li>
                 <li className="list-group-item">Quantity: {quantity}</li>
+                <li className="list-group-item">Sell: {sell}</li>
                 <li className="list-group-item">Supplier: {supplier}</li>
             </ul>
             <div className="card-body">

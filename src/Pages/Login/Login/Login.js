@@ -10,6 +10,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from '../../Shared/Loading/Loading';
 import "./Login.css";
 import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
@@ -20,6 +21,10 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const [signInWithEmailAndPassword, user, loading, hookError] =
     useSignInWithEmailAndPassword(auth);
@@ -53,11 +58,15 @@ const Login = () => {
     }
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    signInWithEmailAndPassword(userInfo.email, userInfo.password);
-    console.log(hookError?.message);
+    await signInWithEmailAndPassword(userInfo.email, userInfo.password);
+    const email = e.target.email.value;
+    const {data}  = await axios.post('http://localhost:5000/login', {email});
+    localStorage.setItem('accessToken', data.accessToken);
+    navigate(from, { replace: true });
+    // console.log(hookError?.message);
 
     if (loading || sending) {
       return <Loading></Loading>
@@ -81,13 +90,11 @@ const Login = () => {
     }
   }, [hookError]);
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  
 
   useEffect(() => {
     if (user) {
-      navigate(from);
+      navigate(from, { replace: true });
       toast.success("Successfully SignIn");
     }
   }, [user]);
