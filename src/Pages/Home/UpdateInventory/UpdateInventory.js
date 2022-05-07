@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./UpdateInventory.css";
 
 const UpdateInventory = () => {
@@ -10,15 +11,15 @@ const UpdateInventory = () => {
   const { img, name, description, price, quantity, supplier } = inventory;
 
   useEffect(() => {
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://quiet-dawn-19288.herokuapp.com/inventory/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
-  }, [id]);
+  }, [quantity]);
 
   // quantity decrease by one when clicked
   const decreaseQuantity = () => {
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://quiet-dawn-19288.herokuapp.com/inventory/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -35,9 +36,10 @@ const UpdateInventory = () => {
   // quantity increase by input field value one when clicked
   const increaseQuantity = (event) => {
     const newQuantity = event.target.quantity.value;
-    console.log(newQuantity);
+    // console.log(newQuantity);
     const updatedQuantity = parseInt(newQuantity) + parseInt(quantity);
-    const url = `http://localhost:5000/inventory/${id}`;
+    console.log(updatedQuantity)
+    const url = `https://localhost:5000/inventory/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -50,7 +52,7 @@ const UpdateInventory = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert(`${data.name} quantity updated to ${updatedQuantity}`);
+        toast(`${data.name} quantity updated to ${updatedQuantity}`);
       });
   };
 
@@ -95,7 +97,7 @@ const UpdateInventory = () => {
                 name="quantity"
                 placeholder="New Quantity"
               ></input>
-              <input as={Link} type="submit" value="Update Quantity" />
+              <input type="submit" value="Update Quantity" />
             </form>
           </div>
         </div>           

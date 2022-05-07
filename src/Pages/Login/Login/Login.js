@@ -63,7 +63,7 @@ const Login = () => {
 
     await signInWithEmailAndPassword(userInfo.email, userInfo.password);
     const email = e.target.email.value;
-    const {data}  = await axios.post('http://localhost:5000/login', {email});
+    const {data}  = await axios.post('https://quiet-dawn-19288.herokuapp.com/login', {email});
     localStorage.setItem('accessToken', data.accessToken);
     navigate(from, { replace: true });
     // console.log(hookError?.message);

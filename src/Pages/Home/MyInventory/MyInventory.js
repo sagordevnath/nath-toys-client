@@ -18,7 +18,7 @@ const MyInventory = () => {
     //     const getMyInventory = async() => {
     //         const email = user?.email;
             
-    //         const url = `http://localhost:5000/inventory?email=${email}`;         
+    //         const url = `https://quiet-dawn-19288.herokuapp.com/inventory?email=${email}`;         
             
 
     //         try{
@@ -44,7 +44,7 @@ const MyInventory = () => {
     //  const handleDelete =  (id) => {
     //     const proceed = window.confirm(`Are you sure you want to delete ${myInventory.name}?`);
     //     if (proceed) {
-    //     const url = `http://localhost:5000/inventory/${id}`;
+    //     const url = `https://quiet-dawn-19288.herokuapp.com/inventory/${id}`;
         
     //     fetch(url, {
     //         method: 'DELETE'
