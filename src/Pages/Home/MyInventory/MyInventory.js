@@ -1,43 +1,44 @@
-import axiosPrivate from 'axios';
-import { signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, Navigate } from 'react-router-dom';
-import auth from "../../../Firebase/Firebase.init";
+// import axiosPrivate from '../../../api/axiosPrivate';
+// import { signOut } from 'firebase/auth';
+// import React, { useEffect, useState } from 'react';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+// import { Link, Navigate } from 'react-router-dom';
+// import auth from "../../../Firebase/Firebase.init";
 import useInventories from '../../../hooks/useInventories';
 import MysingleInventory from '../MySingleInventory/MysingleInventory';
+// import { toast } from 'react-toastify';
 
 const MyInventory = () => {
-    const [user] = useAuthState(auth);
-    const [myInventory, setMyInventory] = useState([]);
+    // const [user] = useAuthState(auth);
+    // const [myInventory, setMyInventory] = useState([]);
     // const [items, setItems] = useState([]);
-    // const [inventories] = useInventories();
+    const [inventories] = useInventories();
 
-    useEffect(()=> {
-        const getMyInventory = async() => {
-            const email = user?.email;
+    // useEffect(()=> {
+    //     const getMyInventory = async() => {
+    //         const email = user?.email;
             
-            const url = `http://localhost:5000/myInventory?email=${email}`;
-            
+    //         const url = `http://localhost:5000/inventory?email=${email}`;         
             
 
-            try{
-                const {data} = await axiosPrivate.get(url);
-                console.log(data)
-                const myItems= data.filter(item => item.email === email);
-                console.log(myItems);
-                setMyInventory(myItems);
-            }
-            catch(error){
-                console.log(error.message);
-                if(error.response?.status === 401 || error.response?.status === 403){
-                    signOut(auth);
-                    Navigate('/login')
-                }
-            }
-        }
-        getMyInventory();
-    },[user]);
+    //         try{
+    //             const {data} = await axiosPrivate.get(url);
+    //             console.log(data)
+    //             const myItems= data.filter(item => item.email === email);
+    //             console.log(myItems);
+    //             setMyInventory(data);
+    //         }
+    //         catch(error){
+    //             console.log(error.message);
+    //             if(error.response?.status === 401 || error.response?.status === 403){
+    //                 // signOut(auth);
+    //                 // Navigate('/login')
+    //                 toast.warning('error.message')
+    //             }
+    //         }
+    //     }
+    //     getMyInventory();
+    // },[user]);
 
     //  // handle delete inventory
     //  const handleDelete =  (id) => {
@@ -58,7 +59,7 @@ const MyInventory = () => {
     // }
     return (
         <div>
-            <p>slfsdlsf:{myInventory.name}</p>
+            {/* <p>slfsdlsf:{inventories.length}</p> */}
             {/* {
                 myInventory.map(singleInventory => <MysingleInventory
                 key={singleInventory._id}
@@ -67,6 +68,13 @@ const MyInventory = () => {
 
                 
             } */}
+            {
+                inventories.map(singleInventory => <MysingleInventory
+                key={singleInventory._id}
+                singleInventory = {singleInventory}
+                ></MysingleInventory>
+                )
+            }
         </div>
     );
 };

@@ -12,7 +12,7 @@ const AddInventory = () => {
     const onSubmit = data => {     
         console.log(data);  
 
-      const url = `http://localhost:5000/myInventory`;
+      const url = `http://localhost:5000/inventory`;
       fetch(url, {
         method: 'POST',
         headers: {
@@ -28,7 +28,7 @@ const AddInventory = () => {
 };
 
   return (
-    <div className='w-50 mx-auto'>
+    <div className='addItem w-50 mx-auto'>
         <h3>Add a new inventory</h3>
         <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
       <input className='mb-2' placeholder='ImgUrl' {...register("img")} />

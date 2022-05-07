@@ -5,12 +5,16 @@ const ProductGalary = () => {
   return (
     <div className="product-gallery container">
       <h1 className='text-center text-primary'>Kids Gallery</h1>
-      <div className="row">
-        <div className="column">
+      <div className="rows">
+        <div className="columns">
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                <img src="https://i.ibb.co/WyTWBM2/gallery1.jpg" />
+                <img 
+                  src="https://i.ibb.co/WyTWBM2/gallery1.jpg"
+                  alt="a browsn French bulldog puppy laying down and looking up with a hopeful look in its eyes. "
+                  title="Photo by Karsten Winegeart for Unsplash"
+                 />
               </div>
               <div className="flip-card-back ollie">
                 <h1>Ollie</h1>
@@ -20,13 +24,13 @@ const ProductGalary = () => {
             </div>
           </div>
         </div>
-        <div className="column">
+        <div className="columns">
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
                   src="https://i.ibb.co/wdxPFp8/gallery2.jpg"
-                  alt="a brown French bulldog puppy laying down and looking up with a hopeful look in its eyes. "
+                  alt="a browsn French bulldog puppy laying down and looking up with a hopeful look in its eyes. "
                   title="Photo by Karsten Winegeart for Unsplash"
                 />
               </div>
@@ -38,7 +42,7 @@ const ProductGalary = () => {
             </div>
           </div>
         </div>
-        <div className="column">
+        <div className="columns">
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
@@ -56,13 +60,13 @@ const ProductGalary = () => {
             </div>
           </div>
         </div>
-        <div className="column">
+        <div className="columns">
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
                   src="https://i.ibb.co/y4zXN8G/gallery4.jpg"
-                  alt="A light brown, long-haired chihuahua sitting next to three rubber duckies. "
+                  alt="A light browsn, long-haired chihuahua sitting next to three rubber duckies. "
                   title="Photo by Giacomo Lucarini for Unsplash"
                 />
               </div>
@@ -75,7 +79,7 @@ const ProductGalary = () => {
           </div>
         </div>
 
-        <div className="column">
+        <div className="columns">
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
@@ -94,13 +98,13 @@ const ProductGalary = () => {
           </div>
         </div>
 
-        <div className="column">
+        <div className="columns">
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
                   src="https://i.ibb.co/BgR01xC/gallery6.jpg"
-                  alt="A light brown puppy standing on a white and tan woven pet bed. "
+                  alt="A light browsn puppy standing on a white and tan woven pet bed. "
                   title="Photo by Sergey Semin for Unsplash"
                 />
               </div>

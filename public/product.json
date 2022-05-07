@@ -30,7 +30,7 @@
     "name": "Lawn-Games",
     "supplier": "Fun-in-Fit",
     "price": 229,
-    "description": "I think all toys should be invisible. Not only would they improve children's imaginations, but they'd also be really affordable.",
+    "description": "I think all toys should be invisible. Not only would they improve children's imaginations, but also affordable.",
     "img": "https://i.ibb.co/nckYT44/Lawn-Games-1x1-220325-1648221535080.jpg",
     "quantity": 100,
     "sell": 50
@@ -39,7 +39,7 @@
     "name": "Mini Train",
     "supplier": "Baby Care",
     "price": 67,
-    "description": "The difference between a human being ten years of age and one fifty years of age lies altogether in the matter of toys.",
+    "description": "The difference between a human being ten years of age and one fifty lies altogether in the matter of toys.",
     "img": "https://i.ibb.co/P141hjV/istockphoto-1196393819-612x612.jpg",
     "quantity": 100,
     "sell": 50
@@ -57,7 +57,7 @@
     "name": "Toys House",
     "supplier": "Toybox",
     "price": 226,
-    "description": "I once bought my kids a set of batteries for Christmas with a note on it saying, Toys not included.",
+    "description": "I once bought my kids a set of batteries a note on it saying, Toys not included.",
     "img": "https://i.ibb.co/7jBR7Sy/images-7.jpg",
     "quantity": 100,
     "sell": 50
@@ -66,7 +66,7 @@
     "name": "Telephone",
     "supplier": "Brinkedos",
     "price": 260,
-    "description": "Men deal with life as children with their play, Who first misuse, then cast their toys away.",
+    "description": "Men deal with life as children with their play, then cast their toys away.",
     "img": "https://i.ibb.co/kqcwwYm/images-8.jpg",
     "quantity": 100,
     "sell": 50
@@ -75,7 +75,7 @@
     "name": "Cute Teddy",
     "supplier": "Fun-in-Fit",
     "price": 437,
-    "description": "What most youngsters would like for Christmas is something to separate the men from the toys.",
+    "description": "What most youngsters would like  to separate the men from the toys.",
     "img": "https://i.ibb.co/rZ6H90t/images-9.jpg",
     "quantity": 100,
     "sell": 50
@@ -84,7 +84,7 @@
     "name": "Magic Toys",
     "supplier": "Wow Toys",
     "price": 146,
-    "description": "The best toys are 90 percent kid, 10 percent toy, with play fueled largely by the child's imagination.",
+    "description": "The best toys are 90 percent kid, with play fueled largely by the child's imagination.",
     "img": "https://i.ibb.co/tBHm2Zt/images.jpg",
     "quantity": 100,
     "sell": 50
@@ -128,7 +128,7 @@
   {
     "name": "Marsmellow kids",
     "supplier": "Kids Store",
-    "price": 420,
+    "price": 120,
     "description": "A good dog toy will amuse your dog for a little while, but it will keep him busy for hours at a time.",
     "img": "https://i.ibb.co/fNRZxwc/images-4.jpg",
     "quantity": 100,

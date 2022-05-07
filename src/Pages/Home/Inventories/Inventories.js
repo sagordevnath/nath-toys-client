@@ -25,7 +25,9 @@ const Inventories = () => {
             }
             </div>
             </div>
-            <button onClick={handleManageInventories}>Manage Inventories</button>
+            
+            <button  onClick={handleManageInventories} className="btn btn-outline-success w-50 mx-auto">Manage Inventories</button>
+            
         </div>
     );
 };

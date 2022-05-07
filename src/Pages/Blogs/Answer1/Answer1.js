@@ -6,7 +6,7 @@ const Answer1 = () => {
     return (
         <div className='answer'>
             <h3 className='question'>Difference between javascript and nodejs</h3>
-            <Table className='card-body' striped bordered hover size="sm" responsive="sm">
+            <Table className='cardBody' striped bordered hover size="sm" responsive="sm">
     <thead>
       <tr>
         <th>Features</th>

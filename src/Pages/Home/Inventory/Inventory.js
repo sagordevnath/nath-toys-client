@@ -13,7 +13,7 @@ const Inventory = ({inventory}) => {
     }
     return (
         <div className='inventory'>
-            <div className="card">
+            <div className="card h-100">
             <img width="50px" src={img} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
@@ -24,8 +24,8 @@ const Inventory = ({inventory}) => {
                 <li className="list-group-item">Quantity: {quantity}</li>
                 <li className="list-group-item">Supplier: {supplier}</li>
             </ul>
-            <div className="card-body">
-                <button onClick={()=>navigateToServiceDetail(_id)}><Link to="#" className="card-link">UPDATE</Link></button>                
+            <div className="card-body">                
+                <button onClick={()=>navigateToServiceDetail(_id)} className="btn btn-outline-success w-100 mx-auto">UPDATE</button>               
             </div>
             </div>            
         </div>
