@@ -15,10 +15,7 @@ const Footer = () => {
           <img width="100px" src={logo} alt="" /> Nath ToYs
         </h4>
         <p>
-          Nunc consequat interdum varius sit amet mattis. Ac tortor vitae purus
-          faucibus ornare.Nunc consequat interdum varius sit amet mattis. Ac
-          tortor vitae purus faucibus ornare.Nunc consequat interdum varius sit
-          amet mattis. Ac tortor vitae purus faucibus ornare.
+        Quality in a product or service is not what the supplier puts in. it is what the customer gets out and is willing to pay for. A product is not quality because it is hard to make and costs a lot of money, as manufacturers typically believe.
         </p>
       </div>
       <div className="location">

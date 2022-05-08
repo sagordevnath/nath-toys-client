@@ -21,8 +21,7 @@ const AddInventory = () => {
         body: JSON.stringify(data)
     })
     .then(res=> res.json())
-    .then(result =>{
-        console.log(result);
+    .then(result =>{       
         toast('Successfully Added')
     } )
 };

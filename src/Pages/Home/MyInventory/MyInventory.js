@@ -14,11 +14,13 @@ const MyInventory = () => {
     useEffect(()=> {
         const getMyInventory = async() => {            
             const email = user?.email;
+            console.log(email)
             
-            const url = `https://quiet-dawn-19288.herokuapp.com/inventory?email=${email}`;          
+            const url = `https://quiet-dawn-19288.herokuapp.com/items?email=${email}`;          
 
             try{
                 const {data} = await axiosPrivate.get(url);                
+                console.log(data)
                 setMyInventories(data);
             }
             catch(error){
@@ -51,6 +53,7 @@ const MyInventory = () => {
     }
     return (
         <div>
+          <h2 className='text-center text-primary my-4'>My Items</h2>
             <div className="inventories-container">
         {myInventories.map((inventory) => (
           <div key={inventory._id} className="container">
