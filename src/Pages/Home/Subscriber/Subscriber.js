@@ -1,9 +1,14 @@
 import React from "react";
+import { toast } from "react-toastify";
 import logo from '../../../Images/logo/logo.png';
 import './Subscriber.css';
 
 
 const Subscriber = () => {
+
+  const handleSubscribe = () => {
+    toast.success('Successfully Subscribed');
+  }
   return (
     <div className="container subscriber-container">
       <div className="subscribe1">
@@ -13,8 +18,8 @@ const Subscriber = () => {
         <img width="10px" src={logo} alt="" />
         <h3 className='text-primary'>Newsletter</h3>
         <p className='text-success'>Subscribe Now For Exclusive Offers</p>
-        <input type="text" />
-        <button>Subscribe</button>
+        <input type="text" placeholder='Email' />
+        <button onClick={handleSubscribe}>Subscribe</button>
         <div className="social-icons">  
   <a className="social-icon social-icon--github">
     <i className="fa fa-github"></i>    

@@ -24,8 +24,8 @@
     color: rgb(0, 210, 225);
 }
 
-.btn {
-    /* background-color: #0d0655; */
+/* .btn {
+    background-color: #0d0655;
     color: rgb(239, 205, 35);
     border: none;
     padding: 0.5rem;
@@ -34,9 +34,10 @@
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+    background: lei;
     
 
-}
+} */
 
 .btn:hover {
     background-color: rgb(239, 205, 35);
@@ -51,4 +52,19 @@
     width: 25px;
     height: 25px;
     margin-bottom: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 2fr;
+        background-image: none;
+        
+    }
+    .footer-container li {
+        font-size: 0.8rem;
+
+
+    }
+
+    
 }

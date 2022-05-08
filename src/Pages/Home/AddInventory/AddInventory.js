@@ -29,7 +29,7 @@ const AddInventory = () => {
 
   return (
     <div className='addItem w-50 mx-auto'>
-        <h3>Add a new inventory</h3>
+        <h3 className='text-center text-primary mb-2'>Add a new Inventory</h3>
         <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
       <input className='mb-2' placeholder='ImgUrl' {...register("img")} />
       <input className='mb-2' placeholder='Name' {...register("name")} />
@@ -38,7 +38,7 @@ const AddInventory = () => {
       <input className='mb-2' placeholder='Price' type="number" {...register("price")} />
       <input className='mb-2' placeholder='Quantity' type="number" {...register("quantity")} />
       <input className='mb-2' placeholder='Supplier' {...register("supplier")} />
-      <input type="submit" value='Add Inventory' />
+      <input className='btn' type="submit" value='Add Inventory' />
     </form>
     </div>
   );

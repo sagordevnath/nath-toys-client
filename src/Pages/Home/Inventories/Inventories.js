@@ -2,9 +2,15 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useInventories from '../../../hooks/useInventories';
 import Inventory from '../Inventory/Inventory';
+import Loading from '../../Shared/Loading/Loading';
 import './Inventories.css';
 const Inventories = () => {
     const [inventories, setInventories] = useInventories();
+
+    if(inventories.length < 1) {
+        <Loading></Loading>
+        
+    }
 
     const navigate = useNavigate();
     const handleManageInventories = () => {

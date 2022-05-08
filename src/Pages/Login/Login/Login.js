@@ -130,7 +130,7 @@ const Login = () => {
             <button type="submit" className="btn w-100 mx-auto">
               Log In
             </button>
-            <Link
+            <Link className='forget-pass'
               onClick={async () => {
                 await sendPasswordResetEmail(userInfo.email);
                 toast("Sent email");

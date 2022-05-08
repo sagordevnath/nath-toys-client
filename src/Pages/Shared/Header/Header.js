@@ -37,21 +37,23 @@ const Header = () => {
                 </CustomLink>
                 <CustomLink as={Link} to="/Blogs">
                   Blogs
-                </CustomLink>
-                <CustomLink as={Link} to="/About">
-                  About
-                </CustomLink>
+                </CustomLink>                
               </Nav>
             </Nav>
             <Nav className="nav-link">
             {user ? (
+                <CustomLink as={Link} to="/manageInventories">
+                  Manage Items
+                </CustomLink>
+            ) : ('')}
+            {user ? (
                 <CustomLink as={Link} to="/addInventory">
-                  Add Inventory
+                  Add Items
                 </CustomLink>
             ) : ('')}
             {user ? (
                 <CustomLink as={Link} to="/myInventory">
-                  My Inventory
+                  My Items
                 </CustomLink>
             ) : ('')}
               {!user ? (

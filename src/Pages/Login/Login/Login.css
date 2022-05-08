@@ -17,7 +17,7 @@
     height: 500px;
     position: relative;
     margin: auto;
-    background: rgb(183, 169, 169);
+    background: aliceblue;
     padding: 20px;
 }
 
@@ -74,6 +74,10 @@
     margin: 50px 10px 30px 10px;
 }
 
+.forget-pass {
+    text-decoration: none;
+}
+
 span {
     color: #777;
     font-size: 10px;
@@ -84,15 +88,30 @@ span {
 }
 
 .btn {
-    width: 80%;
-    padding: 7px 15px;
-    cursor: pointer;
     display: block;
-    margin: 10px auto;
-    background: linear-gradient(to right, #ff105f, #ffad06);
-    border: 0;
-    outline: none;
-    border-radius: 30px;
-    /* border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px; */
+    margin: 20px auto 0;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    color: #eee;
+    font-weight: 700;
+    box-shadow: 1px 4px 10px 1px rgb(198, 191, 191);
+    
+    background: #316ca1; /* Old browsers */
+    background: -moz-linear-gradient(left, #214a6e 0%, #9f58a3 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #3872a4 0%,#9f58a3 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #4a814b 0%,#9f58a3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#9f58a3',GradientType=1 ); /* IE6-9 */
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+@media only screen and (max-width:768px) {
+    .form-box{
+        width: 100%;
+    }
 }

@@ -2,7 +2,27 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    position: relative;
+    margin-top: 20px;
+    background-color: aliceblue;
 }
+
+.inventories-card {
+    padding: 10px;
+    background-color: aliceblue;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.inventories-card li {
+    font-size: 15px;
+}
+
+.button {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+
 
 /* make services responsive */
 @media only screen and (max-width:576px) {

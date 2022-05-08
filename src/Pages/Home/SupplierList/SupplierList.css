@@ -1,12 +1,13 @@
 .supplier-list {
-    height: 200px;
+    height: 250px;
     background-color: aliceblue;
     padding: 10px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .supplier-list img {
-    margin-right: 25px;
+    margin-right: 30px;
 }
 
 

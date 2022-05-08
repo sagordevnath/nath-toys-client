@@ -9,6 +9,7 @@
 .product-gallery {
     background-color: aliceblue;
     padding: 20px;
+    margin-top: 20px;
 }
 
 .rows {
@@ -151,7 +152,7 @@ font-weight: 700;
   text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
 }
 /* Responsive layout - makes a two columns-layout instead of four columnss */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .columns {
     -ms-flex: 50%;
     flex: 50%;
@@ -172,14 +173,13 @@ font-weight: 700;
   }
   .rows{
     padding: 0 4px;
-  margin-left: 90px;
-  margin-right: 40px;
+    margin-left: 17px; 
   }
 }
 
 /* Responsive layout - makes the two columnss stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .header {
+  /* .header {
     text-align: center;
     padding: 10px;
     font-family: 'Barlow Semi Condensed', sans-serif;
@@ -202,17 +202,12 @@ font-weight: 700;
     margin-left:auto;
     margin-right:auto;
     width: 100px;
-  }
+  } */
 .rows{
   padding: 0 4px;
-  margin-left: 140px;
+  grid-template-columns: 1fr;
+  width: 100%;
+  /* margin-left: 140px; */
 }
 }
 
-@media screen and (max-width: 400px) {
-  .rows {
-    padding: 0 4px;
-    margin-left: 35px;
-
-}
-}

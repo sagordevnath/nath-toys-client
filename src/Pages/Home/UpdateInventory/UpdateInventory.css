@@ -1,9 +1,9 @@
-.manageInventories {
+/* .manageInventories {
   display: flex;
   flex-direction: row;
   align-items: center;
   
-}
+} */
 .updateInventory {
     /* width: 500px;     */
     margin: 0 auto;
@@ -18,27 +18,49 @@
 
     
 }
+.inventory-container {
+  display: flex;
+  /* display: grid;
+  grid-template-columns: 3fr, 1fr; */
+  margin-top: 40px;
+  padding: 20px;
+  margin-bottom: 40px;
+    
+}
+
+.info-card {
+  padding: 20px;
+  background-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 #feedback-form {
-  width: 280px;
+  width: 250px;
   margin: 0 auto;
   background-color: #fcfcfc;
-  padding: 20px 50px 40px;
+  padding: 10px 30px 20px;
   box-shadow: 1px 4px 10px 1px #aaa;
   font-family: sans-serif;
+  background-color: aliceblue;
+  
 }
 
 #feedback-form * {
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
-#feedback-form h2{
-  text-align: center;
-  margin-bottom: 30px;
+.header {
+  margin: 20px 0;
+  
 }
 
 #feedback-form input {
   margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;
+  border-bottom: 1px solid rgb(99, 129, 159);
+  border-radius: 4px;
+
 }
 
 #feedback-form input[type=text] {
@@ -48,11 +70,15 @@
   width: 100%;
   border: none;
   background-color: #f3f3f3;
+  border-radius: 4px;
+  font-size: 14px;  
+  font-family: sans-serif;
+
 }
 
 
 
-#feedback-form button[type=submit] {
+#feedback-form input[type=submit] {
   display: block;
   margin: 20px auto 0;
   width: 150px;
@@ -68,4 +94,23 @@
   background: -webkit-linear-gradient(left, #207cca 0%,#9f58a3 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #207cca 0%,#9f58a3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#9f58a3',GradientType=1 ); /* IE6-9 */
+}
+
+#feedback-form input[type=submit]:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .inventory-container {
+    display: block;
+    width: 100% !important;
+    margin-bottom: 40px;
+  }
+
+  .info-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
 }

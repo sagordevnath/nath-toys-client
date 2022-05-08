@@ -4,7 +4,7 @@ import './SupplierList.css'
 const SupplierList = () => {
     return (
         <div className='supplier-list'>
-            <h1 className='text-center text-primary'>Supplier List</h1>
+            <h1 className='text-center text-primary mb-4'>Supplier List</h1>
             <marquee>
                 <img src="https://i.ibb.co/PWpsFy1/supplier1.png" alt="" />
                 <img src="https://i.ibb.co/m0hvsPT/supplier2.png" alt="" />

@@ -15,8 +15,8 @@ const Inventory = ({inventory}) => {
         <div className='inventory'>
             <div className="card h-100">
             <img width="50px" src={img} className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h5 className="card-title">{name}</h5>
+            <div className="card-body cardBody">
+                <h5 className="card-title text-primary">{name}</h5>
                 <p className="card-text">{description}</p>
             </div>
             <ul className="list-group list-group-flush">

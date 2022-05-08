@@ -1,80 +1,99 @@
-// import axiosPrivate from '../../../api/axiosPrivate';
-// import { signOut } from 'firebase/auth';
-// import React, { useEffect, useState } from 'react';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import { Link, Navigate } from 'react-router-dom';
-// import auth from "../../../Firebase/Firebase.init";
-import useInventories from '../../../hooks/useInventories';
-import MysingleInventory from '../MySingleInventory/MysingleInventory';
-// import { toast } from 'react-toastify';
+import axiosPrivate from '../../../api/axiosPrivate';
+import { signOut } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from "../../../Firebase/Firebase.init";
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const MyInventory = () => {
-    // const [user] = useAuthState(auth);
-    // const [myInventory, setMyInventory] = useState([]);
-    // const [items, setItems] = useState([]);
-    const [inventories] = useInventories();
+    const [user] = useAuthState(auth);
+    const [myInventories, setMyInventories] = useState([]); 
+    const navigate = useNavigate();
 
-    // useEffect(()=> {
-    //     const getMyInventory = async() => {
-    //         const email = user?.email;
+    useEffect(()=> {
+        const getMyInventory = async() => {            
+            const email = user?.email;
             
-    //         const url = `https://quiet-dawn-19288.herokuapp.com/inventory?email=${email}`;         
-            
+            const url = `https://quiet-dawn-19288.herokuapp.com/inventory?email=${email}`;          
 
-    //         try{
-    //             const {data} = await axiosPrivate.get(url);
-    //             console.log(data)
-    //             const myItems= data.filter(item => item.email === email);
-    //             console.log(myItems);
-    //             setMyInventory(data);
-    //         }
-    //         catch(error){
-    //             console.log(error.message);
-    //             if(error.response?.status === 401 || error.response?.status === 403){
-    //                 // signOut(auth);
-    //                 // Navigate('/login')
-    //                 toast.warning('error.message')
-    //             }
-    //         }
-    //     }
-    //     getMyInventory();
-    // },[user]);
+            try{
+                const {data} = await axiosPrivate.get(url);                
+                setMyInventories(data);
+            }
+            catch(error){
+                console.log(error.message);
+                if(error.response?.status === 401 || error.response?.status === 403){
+                    signOut(auth);
+                    navigate('/login')
+                    toast.warning('error.message')
+                }
+            }
+        }
+        getMyInventory();
+    },[user]);
 
-    //  // handle delete inventory
-    //  const handleDelete =  (id) => {
-    //     const proceed = window.confirm(`Are you sure you want to delete ${myInventory.name}?`);
-    //     if (proceed) {
-    //     const url = `https://quiet-dawn-19288.herokuapp.com/inventory/${id}`;
+     // handle delete inventory
+     const handleDelete =  (id) => {
+        const agree = window.confirm(`Are you sure you want to delete?`);
+        if (agree) {
+        const url = `https://quiet-dawn-19288.herokuapp.com/inventory/${id}`;
         
-    //     fetch(url, {
-    //         method: 'DELETE'
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data);
-    //         const remaining = items.filter(item => item._id !== id);
-    //         setItems(remaining);
-    //     })
-    //     }
-    // }
+        fetch(url, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {            
+            const remaining = myInventories.filter(item => item._id !== id);
+            setMyInventories(remaining);
+        })
+        }
+    }
     return (
         <div>
-            {/* <p>slfsdlsf:{inventories.length}</p> */}
-            {/* {
-                myInventory.map(singleInventory => <MysingleInventory
-                key={singleInventory._id}
-                singleInventory = {singleInventory}
-                ></MysingleInventory>)
-
-                
-            } */}
-            {
-                inventories.map(singleInventory => <MysingleInventory
-                key={singleInventory._id}
-                singleInventory = {singleInventory}
-                ></MysingleInventory>
-                )
-            }
+            <div className="inventories-container">
+        {myInventories.map((inventory) => (
+          <div key={inventory._id} className="container">
+            <div className="card lg-3 inventories-card">
+              <div className="row full-card g-0">
+                <div className=" image col-lg-6">
+                  <img
+                    width="100%"
+                    src={inventory.img}
+                    className=" img-fluid rounded-start"
+                    alt="..."
+                  />
+                </div>
+                <div className="col-lg-6">
+                  <div className="card-body">
+                    <h6 className="card-title">{inventory.name}</h6>
+                    <ul>
+                      <li className="card-text">Price: {inventory.price}</li>
+                      <li className="card-text">
+                        Quantity: {inventory.quantity}
+                      </li>
+                      <li className="card-text">Sell: {inventory.sell}</li>
+                      <li className="card-text">
+                        Supplier: {inventory.supplier}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="card-body">                
+                                              
+            <button
+                    onClick={() => handleDelete(inventory._id)}
+                    type="button"
+                    className="btn btn-outline-danger button mt-4"
+                  >
+                    DELETE
+                  </button>
+            </div>
+            </div>
+          </div>
+        ))}
+      </div>
         </div>
     );
 };
