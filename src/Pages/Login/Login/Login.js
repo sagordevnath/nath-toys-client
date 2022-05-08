@@ -22,6 +22,7 @@ const Login = () => {
     password: "",
   });
 
+  // handle navigate
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -31,6 +32,7 @@ const Login = () => {
   const [sendPasswordResetEmail, sending] =
     useSendPasswordResetEmail(auth);
 
+  // get input email
   const handleEmailInput = (e) => {
     const emailRegex = /\S+@\S+\.\S+/;
     const validEmail = emailRegex.test(e.target.value);
@@ -44,6 +46,7 @@ const Login = () => {
     }
   };
 
+  // get input password
   const handlePasswordInput = (e) => {
     const passwordRegex =
       /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
@@ -58,6 +61,7 @@ const Login = () => {
     }
   };
 
+  // handle login
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -65,15 +69,12 @@ const Login = () => {
     const email = e.target.email.value;
     const {data}  = await axios.post('https://quiet-dawn-19288.herokuapp.com/login', {email});
     localStorage.setItem('accessToken', data.accessToken);
-    navigate(from, { replace: true });
-    // console.log(hookError?.message);
+    navigate(from, { replace: true });    
 
     if (loading || sending) {
       return <Loading></Loading>
   }
-  };
-
-  
+  };  
 
   useEffect(() => {
     if (hookError) {
@@ -88,9 +89,7 @@ const Login = () => {
           toast.warning("Something went wrong!!");
       }
     }
-  }, [hookError]);
-
-  
+  }, [hookError]);  
 
   useEffect(() => {
     if (user) {
@@ -98,6 +97,7 @@ const Login = () => {
       toast.success("Successfully SignIn");
     }
   }, [user]);
+  
   return (
     <div className="login">
       <div className="form-box">

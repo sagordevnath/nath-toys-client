@@ -20,8 +20,7 @@ const Register = () => {
         password: "",
         confirmPassword: "",
         common: "",
-    });
-    // const [showPassword, setShowPassword] = useState(false);
+    });    
 
     const [
         createUserWithEmailAndPassword,
@@ -30,10 +29,12 @@ const Register = () => {
         hookError,
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
+      // handle input name
       const handleNameInput = e => {
           setUserInfo({...userInfo, name: "e.target.value"})
       }
 
+      // handle input email
       const handleEmailInput = e => {
           const emailRegex = /\S+@\S+\.\S+/;
           const validEmail = emailRegex.test(e.target.value);
@@ -49,10 +50,10 @@ const Register = () => {
           }
       };
 
+      // handle input password
       const handlePasswordInput = e => {
         const passwordRegex = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
-        const validPassword = passwordRegex.test(e.target.value);
-        console.log(validPassword);
+        const validPassword = passwordRegex.test(e.target.value);        
 
         if(validPassword) {
             setUserInfo({...userInfo, password: e.target.value});
@@ -64,6 +65,7 @@ const Register = () => {
         }
       };
 
+      // handle input confirmPassword
       const handleConfirmPasswordInput = e => {
           if(e.target.value === userInfo.password) {
               setUserInfo({...userInfo, confirmPassword: e.target.value});
@@ -76,6 +78,7 @@ const Register = () => {
           }
       };
 
+      // handle register
       const handleRegister = e => {
           e.preventDefault();          
           createUserWithEmailAndPassword(userInfo.email, userInfo.password);
@@ -100,7 +103,7 @@ const Register = () => {
                 toast("Email already in use");
                 break;
             default:
-                // toast('Something went wrong!!')
+                toast('Something went wrong!!')
                 break;
             }
 
@@ -110,6 +113,7 @@ const Register = () => {
         }
       },[hookError]);
 
+      // handle navigate
       const navigate = useNavigate();
       const location = useLocation();
       const from = location.state?.from?.pathname || "/";
@@ -119,6 +123,7 @@ const Register = () => {
               navigate(from)              
           }
       },[user]);
+      
     return (
         <div className="login">
       <div className="form-box">

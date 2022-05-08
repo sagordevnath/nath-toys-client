@@ -1,4 +1,3 @@
-import { faFileImage } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useInventories from "../../../hooks/useInventories";
@@ -28,6 +27,7 @@ const ManageInventories = () => {
         });
     }
   };
+
   return (
     <div>
       <h2 className='text-center text-primary my-4'>Manage Inventories</h2>

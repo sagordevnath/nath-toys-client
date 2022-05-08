@@ -5,7 +5,7 @@ import Inventory from '../Inventory/Inventory';
 import Loading from '../../Shared/Loading/Loading';
 import './Inventories.css';
 const Inventories = () => {
-    const [inventories, setInventories] = useInventories();
+    const [inventories] = useInventories();
 
     if(inventories.length < 1) {
         <Loading></Loading>

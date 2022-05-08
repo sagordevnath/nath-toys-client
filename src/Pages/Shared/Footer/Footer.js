@@ -8,7 +8,8 @@ const Footer = () => {
 
   return (
    
-      <div className="footer-container">
+      <div>
+        <div className="footer-container">
       <div className="info">
         <h4 className="text-danger mb-3">
           <img width="100px" src={logo} alt="" /> Nath ToYs
@@ -100,12 +101,12 @@ const Footer = () => {
             </svg>{" "}
             info@gmail.com
           </div>
+          <small>All Rights Reserve. Copywrite © Nath Toys {year}{" "}</small>
         </div>
       </div>
-      <div className="text-center">
-        All Rights Reserve. Copywrite © {year}{" "}
+      
+    </div>    
       </div>
-    </div>
     
     
   );

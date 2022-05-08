@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Inventory.css'
 
 const Inventory = ({inventory}) => {
@@ -8,6 +8,7 @@ const Inventory = ({inventory}) => {
 
     const navigate = useNavigate();
 
+    // handle navigate
     const navigateToServiceDetail = id =>{
         navigate(`/inventory/${id}`);
     }

@@ -8,7 +8,7 @@ const UpdateInventory = () => {
 
   const [inventory, setInventory] = useState({});
 
-  const { _id, img, name, description, price, quantity, supplier } = inventory;
+  const { img, name, description, price, quantity, supplier } = inventory;
 
   useEffect(() => {
     const url = `https://quiet-dawn-19288.herokuapp.com/inventory/${id}`;
@@ -17,7 +17,7 @@ const UpdateInventory = () => {
       .then((data) => setInventory(data));
   }, [inventory]);
 
-  // quantity decrease by one when clicked
+  // handle quantity decrease 
   const decreaseQuantity = () => {    
     const oldNumber = parseInt(quantity);
     const newNumber = oldNumber - 1;
@@ -34,7 +34,7 @@ const UpdateInventory = () => {
       .then((data) => setInventory(data));
   };
 
-  // quantity increase by input field value one when clicked
+  // handle quantity increase 
   const increaseQuantity = (event) => {
     event.preventDefault();
     const number = parseInt(event.target.quantity.value);
@@ -56,29 +56,9 @@ const UpdateInventory = () => {
         event.target.reset();
         toast('Quantity added Successfully!!')
       });
-  }
+  }    
 
-    // const newQuantity = event.target.quantity.value;
-    // // console.log(newQuantity);
-    // const updatedQuantity = parseInt(newQuantity) + parseInt(quantity);
-    // console.log(updatedQuantity);
-    // const url = `https://quiet-dawn-19288.herokuapp.com/inventory/${id}`;
-    // fetch(url, {
-    //   method: "PUT",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     quantity: updatedQuantity,
-    //   }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     toast(`${data.name} quantity updated to ${updatedQuantity}`);
-    //   });
-  // };
-
+  // handle navigate
   const navigate = useNavigate();
   const handleManageInventories = () => {
     navigate("/manageInventories");

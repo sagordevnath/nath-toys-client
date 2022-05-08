@@ -1,11 +1,4 @@
-/* .manageInventories {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  
-} */
 .updateInventory {
-    /* width: 500px;     */
     margin: 0 auto;
 }
 
@@ -19,9 +12,7 @@
     
 }
 .inventory-container {
-  display: flex;
-  /* display: grid;
-  grid-template-columns: 3fr, 1fr; */
+  display: flex;  
   margin-top: 40px;
   padding: 20px;
   margin-bottom: 40px;

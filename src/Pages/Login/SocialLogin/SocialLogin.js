@@ -17,14 +17,13 @@ const SocialLogin = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    let from = location.state?.from?.pathname || "/";
-    
-    let errorElement;
+    let from = location.state?.from?.pathname || "/";    
 
     if(googleLoading || githubLoading){
         return <Loading></Loading>
     }
 
+    let errorElement;
     if (googleError || githubError) {
         errorElement = <p className='text-danger'>Error: {googleError?.message} {githubError?.message}</p>
     }
@@ -32,8 +31,7 @@ const SocialLogin = () => {
     if (googleUser || githubUser) {
         navigate(from, { replace: true });
         toast('Successfully Login');
-    }
-  
+    }  
   
   return (
     <div className="social-icons">

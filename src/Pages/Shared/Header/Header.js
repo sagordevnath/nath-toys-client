@@ -1,19 +1,30 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import auth from "../../../Firebase/Firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import logo from '../../../Images/logo/logo.png'
+import Loading from '../Loading/Loading';
 import "./Header.css";
 import CustomLink from "../CustomActiveLink/CustomLink";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
 
+  if (loading) {
+    <Loading></Loading>
+  }
+  if (error) {
+    toast.danger(error.message)
+  }
+
+  // handle Logout
   const handleLogout = () => {
     signOut(auth);
   };
+  
   return (
     <div className="navbar">
       <Navbar collapseOnSelect expand="lg">

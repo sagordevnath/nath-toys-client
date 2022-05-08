@@ -7,7 +7,7 @@ import './Subscriber.css';
 const Subscriber = () => {
 
   const handleSubscribe = () => {
-    toast.success('Successfully Subscribed');
+    toast.success('Thanks for Subscription');
   }
   return (
     <div className="container subscriber-container">
